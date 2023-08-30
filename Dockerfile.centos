@@ -1,0 +1,10 @@
+
+FROM centos:7
+
+#COPY myrepo.repo /etc/yum.repos.d/
+
+# Устанавливаем необходимые пакеты для доступа к репозиториям и установки bash
+RUN yum update -y && yum install -y yum-utils && yum clean all
+RUN yum install -y bash
+
+RUN mkdir /data
